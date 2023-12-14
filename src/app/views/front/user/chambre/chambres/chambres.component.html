@@ -1,0 +1,84 @@
+<main class="main-content mt-0">
+  <div
+    class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg"
+    style="
+      background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg');
+      background-position: top;
+    "
+  >
+    <span class="mask bg-gradient-dark opacity-6"></span>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 text-center mx-auto">
+          <h1 class="text-white mb-2 mt-5">Reservation</h1>
+          <p class="text-lead text-white">
+            Découvrez tout ce que notre université a à offrir. Explorez nos
+            foyers, blocs, chambres et faites vos réservations en quelques
+            clics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-xl">
+    <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+      <div class="col-xl-12 col-lg-12 mx-auto">
+        <div class="card z-index-0 my-5">
+          <div class="card-header pt-4">
+            <div class="row">
+             
+            
+            </div>
+          </div>
+          <div class="card mx-3 my-5">
+                <table class="table table-vcenter table-mobile-md card-table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>ID Chambre</th>
+                      <th>Numéro Chambre</th>
+                      <th>Type Chambre</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngIf="chambres">
+                    <tr
+                      *ngFor="
+                        let c of chambres
+                       
+                        let i = index
+                      "
+                    
+                    >
+                      <td class="pl-2"><i class="fas fa-bed fa-2x"></i></td>
+                      <td class="pl-2">{{ c.idChambre }}</td>
+                      <td class="pl-2">{{ c.numeroChambre }}</td>
+                      <td class="pl-2">{{ c.typeChambre }}</td>
+                      <td class="col">
+                  
+                          <span class="material-icons"> edit </span>
+
+                        <a
+                          class="btn text-danger small-icon-btn"
+                          title="Supprimer"
+                          (click)="deleteChambre(c.idChambre)"
+                        >
+                          <span class="material-icons"> delete </span>
+                        </a>
+
+                          <span class="material-icons">visibility</span>
+                    
+                      </td>
+                    </tr>
+                  </tbody>
+
+               
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+   
+ 
+

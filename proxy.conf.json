@@ -1,0 +1,48 @@
+{
+    "/admin/etudiant/": [
+      {
+        "target": "http://localhost:8089",
+        "secure": false,
+        "changeOrigin": true
+      },
+      {
+        "target": "http://localhost:8089/admin",
+        "secure": false,
+        "changeOrigin": true
+      },
+      {
+        "target": "http://localhost:4200/admin/etudiant/Ajouter",
+        "secure": false,
+        "changeOrigin": true
+      }
+      ,
+      {
+        "target": "http://localhost:4200/admin/etudiant",
+        "secure": false,
+        "changeOrigin": true
+      },
+      {
+        "target": "http://localhost:8089/",
+        "secure": false,
+        "changeOrigin": true
+      },
+      {
+        "target": "http://localhost:8089/admin/",
+        "secure": false,
+        "changeOrigin": true
+      },
+      {
+        "target": "http://localhost:4200/admin/etudiant/Ajouter/",
+        "secure": false,
+        "changeOrigin": true
+      }
+      ,
+      {
+        "target": "http://localhost:4200/admin/etudiant/",
+        "secure": false,
+        "changeOrigin": true
+      }
+    ]
+  
+  }
+  

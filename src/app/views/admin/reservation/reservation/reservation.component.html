@@ -1,0 +1,118 @@
+<div class="mt-5">
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <div class="row">
+              <h1 class="col-8">Liste des Réservation</h1>
+        
+             
+            </div>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div #pdfContent>
+              <div class="table-responsive p-0">
+                <table
+                  class="table table-vcenter table-mobile-md card-table"
+                  border="1"
+                >
+                  <thead>
+                    <tr>
+                      <th>Id Réservation</th>
+                      <th>Cin Etudiant</th>
+                      <th>Type Chambre</th>
+                      <th>Annee Réservation</th>
+                      <th>Est Valide</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="
+                        let r of reservations
+                        
+                        let i = index
+                      "
+                      appHighlight
+                    >
+                      <td>
+                        {{ r.idReservation }}
+
+                    
+
+                        <div
+                          class="collapse col-10"
+                          [id]="'collapseExample' + r.idReservation"
+                        >
+                         >
+                        </div>
+                      </td>
+
+                      <td>{{ r.cinEtudiant }}</td>
+                      <td>{{ r.typeChambre }}</td>
+                      <td>{{ r.anneeUniversitaire }}</td>
+                      <td>
+                        <span
+                          class="badge badge-sm bg-gradient-success"
+                          *ngIf="r.estValide == true"
+                        >
+                          {{ r.estValide }}
+                        </span>
+                        <span
+                          class="badge badge-sm bg-gradient-danger"
+                          *ngIf="r.estValide == false"
+                        >
+                          {{ r.estValide }}
+                        </span>
+                      </td>
+
+                      <td class="col">
+                     
+                     
+                        <a
+                          class="btn text-danger"
+                          (click)="nonValide(r.idReservation)"
+                        >
+                          <span class="material-icons"> delete_outline </span>
+                        </a>
+                        <a
+                          (click)="delete(r.idReservation)"
+                          class="btn text-danger"
+                        >
+                          <span class="material-icons"> archive </span>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-3" id="blocModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title justify-content-center">
+          Traitement de la demande d'une reservation
+        </h2>
+      </div>
+      <div class="modal-body">
+        <h4 class="text-danger">{{ message }}</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal ">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- pagination-->
